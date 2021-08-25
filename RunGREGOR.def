@@ -1,0 +1,32 @@
+Bootstrap: library
+From: ubuntu:18.04
+
+%files
+    /local/users/athib/GREGORSingularity/GREGOR/ /
+
+%post
+    apt-get -y update
+    apt-get install -y gcc
+    apt-get install -y g++
+    apt-get install -y bzip2
+    apt-get install -y libbz2-dev
+    apt-get install -y zlib1g-dev
+    apt-get install -y liblzma-dev
+    apt-get install -y python3.6
+    apt-get install -y software-properties-common
+    apt-add-repository universe
+    apt-get -y update
+    apt-get install -y python3-pip
+    apt-get install -y python-pip
+    apt-get install -y python-tk
+    yes | pip3 install numpy cython pandas
+    yes | pip install numpy cython pandas
+    apt-get install libswitch-perl
+    apt-get install libdbi-perl
+    apt-get install -y libdbd-sqlite3-perl
+
+%runscript
+    /GREGOR/GREGORRunScript.sh "$@"
+
+%labels
+    Singularity Image for running GREGOR v1.4.0, which can be downloaded from http://csg.sph.umich.edu/GREGOR/index.php/site/index
