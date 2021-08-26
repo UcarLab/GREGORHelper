@@ -115,7 +115,7 @@ touch ${slurmfile}
 echo \#!/bin/bash >> ${slurmfile}
 echo \#SBATCH --nodes=1 >> ${slurmfile}
 echo \#SBATCH --ntasks-per-node=1 >> ${slurmfile}
-echo \#SBATCH --time=6:00:00 >> ${slurmfile}
+echo \#SBATCH --time=24:00:00 >> ${slurmfile}
 echo \#SBATCH --mem-per-cpu=8G >> ${slurmfile}
 echo \#SBATCH --job-name=GREGOR >> ${slurmfile}
 echo \#SBATCH --array=1-${COUNT}%32 \#Run only 32 of these at one time >> ${slurmfile}
@@ -136,7 +136,7 @@ touch ${slurmcleanfile}
 echo \#!/bin/bash >> ${slurmcleanfile}
 echo \#SBATCH --nodes=1 >> ${slurmcleanfile}
 echo \#SBATCH --ntasks-per-node=1 >> ${slurmcleanfile}
-echo \#SBATCH --time=6:00:00 >> ${slurmcleanfile}
+echo \#SBATCH --time=8:00:00 >> ${slurmcleanfile}
 echo \#SBATCH --mem-per-cpu=8G >> ${slurmcleanfile}
 echo \#SBATCH --job-name=GREGOR >> ${slurmcleanfile}
 echo \#SBATCH --array=1-${COUNT}%32 \#Run only 32 of these at one time >> ${slurmcleanfile}
